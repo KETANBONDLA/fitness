@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:fontFamily="@font/poppins"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="#FFFFFF">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/title_calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calorie Calculator"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#4A4A4A"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Age -->
+    <TextView
+        android:id="@+id/age_label_calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Your Age"
+        android:textSize="16sp"
+        android:textColor="#4A4A4A"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/title_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/age_input_layout_calories"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/age_label_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/age_input_calories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Age (years)"
+            android:inputType="number"
+            android:textColor="#4A4A4A"
+             />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Gender -->
+    <TextView
+        android:id="@+id/gender_label_calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Your Gender"
+        android:textSize="16sp"
+        android:textColor="#4A4A4A"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/age_input_layout_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <RadioGroup
+        android:id="@+id/gender_group_calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/gender_label_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp">
+
+        <RadioButton
+            android:id="@+id/radio_male_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:textSize="14sp"
+            android:textColor="#4A4A4A"
+            android:fontFamily="@font/poppins" />
+
+        <RadioButton
+            android:id="@+id/radio_female_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:layout_marginStart="12dp"
+            android:textSize="14sp"
+            android:textColor="#4A4A4A"
+            android:fontFamily="@font/poppins" />
+    </RadioGroup>
+
+    <!-- Weight -->
+    <TextView
+        android:id="@+id/weight_label_calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Your Weight"
+        android:textSize="16sp"
+        android:textColor="#4A4A4A"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/gender_group_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/weight_input_layout_calories"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/weight_label_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/weight_input_calories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Weight (kg)"
+            android:inputType="numberDecimal"
+            android:textColor="#4A4A4A"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Height -->
+    <TextView
+        android:id="@+id/height_label_calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Your Height"
+        android:textSize="16sp"
+        android:textColor="#4A4A4A"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/weight_input_layout_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/height_input_layout_calories"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/height_label_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/height_input_calories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Height (cm)"
+            android:inputType="numberDecimal"
+            android:textColor="#4A4A4A"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Activity Level -->
+    <TextView
+        android:id="@+id/activity_label_calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Activity Level"
+        android:textSize="16sp"
+        android:textColor="#4A4A4A"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/height_input_layout_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <RadioGroup
+        android:id="@+id/activity_level_group_calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/activity_label_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp">
+
+        <RadioButton
+            android:id="@+id/radio_lightly_active_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lightly active"
+            android:textSize="14sp"
+            android:textColor="#4A4A4A"
+            android:fontFamily="@font/poppins" />
+
+        <RadioButton
+            android:id="@+id/radio_moderately_active_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Moderately active"
+            android:textSize="14sp"
+            android:textColor="#4A4A4A"
+            android:fontFamily="@font/poppins" />
+
+        <RadioButton
+            android:id="@+id/radio_highly_active_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Highly active"
+            android:textSize="14sp"
+            android:textColor="#4A4A4A"
+            android:fontFamily="@font/poppins" />
+    </RadioGroup>
+
+    <!-- Goal -->
+    <TextView
+        android:id="@+id/goal_label_calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Goal"
+        android:textSize="16sp"
+        android:textColor="#4A4A4A"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/activity_level_group_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <RadioGroup
+        android:id="@+id/goal_group_calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/goal_label_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp">
+
+        <RadioButton
+            android:id="@+id/radio_maintain_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Maintain"
+            android:textSize="14sp"
+            android:textColor="#4A4A4A"
+            android:fontFamily="@font/poppins" />
+
+        <RadioButton
+            android:id="@+id/radio_loss_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weight Loss"
+            android:textSize="14sp"
+            android:textColor="#4A4A4A"
+            android:fontFamily="@font/poppins" />
+
+        <RadioButton
+            android:id="@+id/radio_gain_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weight Gain"
+            android:textSize="14sp"
+            android:textColor="#4A4A4A"
+            android:fontFamily="@font/poppins" />
+    </RadioGroup>
+
+    <!-- Result Output TextView -->
+    <TextView
+        android:id="@+id/result_text_calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Result will be displayed here"
+        android:textSize="16sp"
+        android:textColor="#4A4A4A"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/goal_group_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Calculate Button -->
+    <Button
+        android:id="@+id/calculate_button_calories"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#000000"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/result_text_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
