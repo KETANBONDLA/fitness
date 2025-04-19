@@ -1,71 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#F0F0F0"
+    android:padding="16dp"
     tools:context=".CardActivity">
 
-    <!-- Card 1 - BMI -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/tvAppTitle"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="24dp"
-        app:cardBackgroundColor="#F0F0F0"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="YODA"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imageView3"
+    <!-- Input Card -->
+    <RelativeLayout
+        android:id="@+id/cardInputs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAppTitle"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvInputTitle"
             android:layout_width="wrap_content"
-            android:layout_height="188dp"
-            android:adjustViewBounds="true"
+            android:layout_height="wrap_content"
+            android:text="Your Information"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-            android:background="?attr/selectableItemBackground"
-            android:contentDescription="BMI"
-            android:padding="20dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/bmii" />
-    </androidx.cardview.widget.CardView>
+        <EditText
+            android:id="@+id/etHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvInputTitle"
+            android:layout_marginTop="16dp"
+            android:background="@android:drawable/edit_text"
+            android:hint="Height (cm)"
+            android:inputType="number"
+            android:padding="12dp" />
 
-    <!-- Card 2 - Body Fat -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        <EditText
+            android:id="@+id/etWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etHeight"
+            android:layout_marginTop="8dp"
+            android:background="@android:drawable/edit_text"
+            android:hint="Weight (kg)"
+            android:inputType="numberDecimal"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/etAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etWeight"
+            android:layout_marginTop="8dp"
+            android:background="@android:drawable/edit_text"
+            android:hint="Age"
+            android:inputType="number"
+            android:padding="12dp" />
+
+        <TextView
+            android:id="@+id/tvGenderLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etAge"
+            android:layout_marginTop="12dp"
+            android:text="Gender"
+            android:textSize="14sp" />
+
+        <RadioGroup
+            android:id="@+id/rgGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvGenderLabel"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/rbFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female" />
+        </RadioGroup>
+    </RelativeLayout>
+
+    <!-- Buttons Card -->
+    <RelativeLayout
+        android:id="@+id/cardButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardInputs"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvButtonsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculations"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnCalculateBMI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvButtonsTitle"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#4CAF50"
+            android:padding="12dp"
+            android:text="Calculate BMI"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnCalculateBMR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnCalculateBMI"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#2196F3"
+            android:padding="12dp"
+            android:text="Calculate BMR"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnCalculateBodyFat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnCalculateBMR"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#FF9800"
+            android:padding="12dp"
+            android:text="Calculate Body Fat"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+    <!-- Result Card -->
+    <RelativeLayout
+        android:id="@+id/cardResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardButtons"
+        android:layout_above="@id/tvFooter"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvResultTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Results"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvResultTitle"
+            android:layout_marginTop="8dp"
+            android:minHeight="48dp"
+            android:background="#E8E8E8"
+            android:padding="12dp"
+            android:text="Your results will appear here"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <!-- Footer with app name -->
+    <TextView
+        android:id="@+id/tvFooter"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="24dp"
-        app:cardBackgroundColor="#F0F0F0"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardView">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="YODA"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
-    </androidx.cardview.widget.CardView>
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="195dp"
-        android:adjustViewBounds="true"
-        android:background="?attr/selectableItemBackground"
-        android:contentDescription="Body Fat"
-        android:padding="20dp"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/fat"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="412dp" />
-
-    <!-- Card 3 - Calorie -->
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
